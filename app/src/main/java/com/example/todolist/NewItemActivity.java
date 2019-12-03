@@ -45,6 +45,8 @@ public class NewItemActivity extends AppCompatActivity {
         addNewTaskBtn = findViewById(R.id.btnAdd);
         cancelBtn = findViewById(R.id.btnCancel);
 
+
+        // save task to Firebase
         addNewTaskBtn.setOnClickListener( new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -70,11 +72,15 @@ public class NewItemActivity extends AppCompatActivity {
                        Toast.makeText(getApplicationContext(), "NoData", Toast.LENGTH_SHORT).show();
                    }
                });
+
            }
         });
 
-        // fonts optional
-        //Typeface MLight = Typeface.createFromAsset(getAssets(), )
-
+        // cancel button
+       cancelBtn.setOnClickListener( new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+       });
     }
 }
