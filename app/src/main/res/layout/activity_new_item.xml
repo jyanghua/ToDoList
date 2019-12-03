@@ -74,7 +74,8 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Details of the task"
+            android:hint="Details of the task (30 char max)"
+            android:maxLength="30"
             android:layout_height="50dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
