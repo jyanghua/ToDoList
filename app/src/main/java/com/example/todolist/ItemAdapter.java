@@ -35,6 +35,27 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.itemTitle.setText(myItem.get(position).getItemTitle());
         holder.itemDescription.setText(myItem.get(position).getItemDescription());
         holder.itemDate.setText(myItem.get(position).getItemDate());
+
+        final String getTitle = myItem.get(position).getItemTitle();
+        final String getDesc = myItem.get(position).getItemDescription();
+        final String getDate = myItem.get(position).getItemDate();
+        final String getKey = myItem.get(position).getItemKey();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent change = new Intent(context, EditItemActivity.class);
+                change.putExtra("itemTitle", getTitle);
+                change.putExtra("itemDescription", getDesc);
+                change.putExtra("itemDate", getDate);
+                change.putExtra("itemKey", getKey);
+                context.startActivity(change);
+
+            }
+
+        });
     }
 
     @Override
@@ -44,13 +65,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemTitle, itemDescription, itemDate;
+        TextView itemTitle, itemDescription, itemDate, itemKey;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             itemTitle = itemView.findViewById(R.id.itemTitle);
             itemDescription = itemView.findViewById(R.id.itemDescription);
             itemDate = itemView.findViewById(R.id.itemDate);
+
         }
     }
 

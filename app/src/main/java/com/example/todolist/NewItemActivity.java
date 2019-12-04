@@ -26,6 +26,7 @@ public class NewItemActivity extends AppCompatActivity {
     Button addNewTaskBtn, cancelBtn;
     DatabaseReference ref;
     Integer randNum = new Random().nextInt();
+    String keyItem = Integer.toString((randNum));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class NewItemActivity extends AppCompatActivity {
                        dataSnapshot.getRef().child("itemTitle").setValue(title2.getText().toString());
                        dataSnapshot.getRef().child("itemDescription").setValue(desc2.getText().toString());
                        dataSnapshot.getRef().child("itemDate").setValue(date2.getText().toString());
+                       dataSnapshot.getRef().child("itemKey").setValue(keyItem);
 
                        Intent intent = new Intent( NewItemActivity.this, MainActivity.class);
                        startActivity(intent);

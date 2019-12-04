@@ -5,14 +5,16 @@ public class MyItem {
     private String itemTitle;
     private String itemDescription;
     private String itemDate;
+    private String itemKey;
 
     public MyItem() {
     }
 
-    public MyItem(String itemTitle, String itemDescription, String itemDate) {
+    public MyItem(String itemTitle, String itemDescription, String itemDate, String itemKey) {
         this.itemTitle = itemTitle;
         this.itemDescription = itemDescription;
         this.itemDate = itemDate;
+        this.itemKey = itemKey;
     }
 
     public String getItemTitle() {
@@ -38,4 +40,8 @@ public class MyItem {
     public void setItemDate(String itemDate) {
         this.itemDate = itemDate;
     }
+
+    public String getItemKey() { return itemKey; }
+
+    public void setItemKey(String itemKey) { this.itemKey = itemKey; }
 }
