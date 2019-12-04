@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Fetch data from Firebase
         reference = FirebaseDatabase.getInstance().getReference().child("ToDoList");
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSS: dataSnapshot.getChildren()){

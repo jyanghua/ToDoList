@@ -57,7 +57,7 @@ public class NewItemActivity extends AppCompatActivity {
                ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
                        randNum);
 
-               ref.addValueEventListener(new ValueEventListener() {
+               ref.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                        // store data into the database..
