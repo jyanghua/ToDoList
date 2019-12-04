@@ -22,7 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 public class EditItemActivity extends AppCompatActivity {
 
     EditText title, desc, date;
-    Button btnSave, btnCancel, btnDelete;
+    Button btnCancel, btnDelete;
+    //Button btnSave;
     DatabaseReference ref;
 
     @Override
@@ -34,7 +35,7 @@ public class EditItemActivity extends AppCompatActivity {
         desc = findViewById(R.id.newDescription);
         date = findViewById(R.id.newDate);
 
-        btnSave = findViewById(R.id.btnSave);
+        //btnSave = findViewById(R.id.btnSave);
         btnCancel = findViewById(R.id.btnCancel);
         btnDelete = findViewById(R.id.btnRemove);
 
@@ -44,6 +45,8 @@ public class EditItemActivity extends AppCompatActivity {
         date.setText((getIntent().getStringExtra("itemDate")));
         final String key = getIntent().getStringExtra("itemKey");
 
+        // used to edit/update the app
+        /*
         btnSave.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -72,6 +75,7 @@ public class EditItemActivity extends AppCompatActivity {
                 });
             }
         });
+         */
 
         btnCancel.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {

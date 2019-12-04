@@ -25,6 +25,7 @@ public class NewItemActivity extends AppCompatActivity {
     EditText title2, desc2, date2;
     Button addNewTaskBtn, cancelBtn;
     DatabaseReference ref;
+
     Integer randNum = new Random().nextInt();
     String keyItem = Integer.toString((randNum));
 

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
-            android:text="Edit Item"
+            android:text="Delete Item"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
@@ -114,19 +114,6 @@
             android:layout_height="50dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="#673AB7"
-            android:text="Save"
-            android:textColor="#EBE7E7"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnCancel"
