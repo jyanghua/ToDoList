@@ -45,44 +45,14 @@ public class DeleteItemActivity extends AppCompatActivity {
         date.setText((getIntent().getStringExtra("itemDate")));
         final String key = getIntent().getStringExtra("itemKey");
 
-        // used to edit/update the app
-        /*
-        btnSave.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
-                        key);
-
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        // store data into the database..
-                        dataSnapshot.getRef().child("itemTitle").setValue(title.getText().toString());
-                        dataSnapshot.getRef().child("itemDescription").setValue(desc.getText().toString());
-                        dataSnapshot.getRef().child("itemDate").setValue(date.getText().toString());
-                        dataSnapshot.getRef().child("itemKey").setValue(key);
-
-                        Intent intent = new Intent( EditItemActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
-         */
-
+        // cancel button
         btnCancel.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
             }
         });
 
+        // delete the item
         ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
                 key);
 
