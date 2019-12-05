@@ -39,7 +39,7 @@
             android:layout_marginLeft="265dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:background="#979797"
+            android:background="#673AB7"
             android:text="Delete Task"
             android:textColor="#EBE7E7"
             android:textSize="18sp"
@@ -66,7 +66,11 @@
             android:hint="Change the name of the task"
             android:layout_height="50dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <TextView
             android:id="@+id/addItemDescriptionText"
@@ -90,7 +94,11 @@
             android:maxLength="30"
             android:layout_height="50dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <TextView
             android:id="@+id/addItemDateText"
@@ -113,7 +121,11 @@
             android:hint="Change the timeline or date"
             android:layout_height="50dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:paddingRight="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
         <Button
             android:id="@+id/btnCancel"

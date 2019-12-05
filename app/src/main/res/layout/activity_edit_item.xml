@@ -109,7 +109,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
-            android:background="#21242B"
+            android:background="#673AB7"
             android:text="Update"
             android:textColor="#EBE7E7"
             android:textSize="18sp"
