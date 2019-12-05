@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class EditItemActivity extends AppCompatActivity {
 
     EditText title, desc, date;
-    Button btnCancel, btnDelete;
+    Button btnCancel;
     //Button btnSave;
     DatabaseReference ref;
 
@@ -37,8 +37,6 @@ public class EditItemActivity extends AppCompatActivity {
 
         //btnSave = findViewById(R.id.btnSave);
         btnCancel = findViewById(R.id.btnCancel);
-        btnDelete = findViewById(R.id.btnRemove);
-
 
         title.setText((getIntent().getStringExtra("itemTitle")));
         desc.setText((getIntent().getStringExtra("itemDescription")));
@@ -82,31 +80,6 @@ public class EditItemActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
-                key);
-
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ref.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful())
-                        {
-                            Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
-                            startActivity(intent);
-                        }
-                        else
-                        {
-                            Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-        });
-
-
 
     }
 }

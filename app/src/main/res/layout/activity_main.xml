@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:background="@color/colorPrimaryDark"
         tools:ignore="UselessLeaf">
@@ -28,9 +28,9 @@
 
         <TextView
             android:id="@+id/subtitlePage"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textColor="#C4FFFFFF"
-            android:text="No procrastination plz"
+            android:text="Short press to update item\nLong press to delete item"
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

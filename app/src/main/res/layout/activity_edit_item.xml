@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
-            android:text="Delete Item"
+            android:text="Update Item"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
@@ -31,19 +31,6 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnRemove"
-            android:layout_width="140dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="265dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#979797"
-            android:text="Delete Task"
-            android:textColor="#EBE7E7"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/addItemTitleText"

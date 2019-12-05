@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,8 +54,25 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                 change.putExtra("itemKey", getKey);
                 context.startActivity(change);
 
+                Toast.makeText(v.getContext(), "Update Item", Toast.LENGTH_SHORT).show();
             }
 
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent change = new Intent(context, DeleteItemActivity.class);
+                change.putExtra("itemTitle", getTitle);
+                change.putExtra("itemDescription", getDesc);
+                change.putExtra("itemDate", getDate);
+                change.putExtra("itemKey", getKey);
+                context.startActivity(change);
+
+                Toast.makeText(v.getContext(), "Delete Item", Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
         });
     }
 
