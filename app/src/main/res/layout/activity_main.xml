@@ -52,16 +52,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnCreate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#673AB7"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Create New Item"
+            android:textColor="#EBE7E7"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="#673AB7"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Search Item"
             android:textColor="#EBE7E7"
             android:textSize="18sp"
             android:textStyle="bold" />

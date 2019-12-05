@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     TextView titlePage, subtitlePage;
-    Button btnCreate;
+    Button btnCreate, btnSearch;
 
     DatabaseReference reference;
     RecyclerView myList;
@@ -39,11 +39,20 @@ public class MainActivity extends AppCompatActivity {
         subtitlePage = findViewById(R.id.subtitlePage);
 
         btnCreate = findViewById(R.id.btnCreate);
+        btnSearch = findViewById(R.id.btnSearch);
 
         btnCreate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, NewItemActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
         });
