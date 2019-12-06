@@ -1,3 +1,10 @@
+/*
+ * ICS 45J - Fall 2019
+ * Lab 5 - Android Studio
+ * Group name: Jackfruit
+ * Members: Lillian Won, Linda Le, Jack Yang Huang
+ */
+
 package com.example.todolist;
 
 import androidx.annotation.NonNull;
@@ -21,10 +28,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DeleteItemActivity extends AppCompatActivity {
 
-    EditText title, desc, date;
-    Button btnCancel, btnDelete;
-    //Button btnSave;
-    DatabaseReference ref;
+    private EditText title, desc, date;
+    private Button btnCancel, btnDelete;
+    private DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +41,8 @@ public class DeleteItemActivity extends AppCompatActivity {
         desc = findViewById(R.id.newDescription);
         date = findViewById(R.id.newDate);
 
-        //btnSave = findViewById(R.id.btnSave);
         btnCancel = findViewById(R.id.btnCancel);
         btnDelete = findViewById(R.id.btnRemove);
-
 
         title.setText((getIntent().getStringExtra("itemTitle")));
         desc.setText((getIntent().getStringExtra("itemDescription")));

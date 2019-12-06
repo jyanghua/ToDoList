@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ICS 45J, Fall 2019
+Lab 5, Android Studio
+Group name: Jackfruit
+Members: Lillian Won, Linda Le, Jack Yang Huang
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"

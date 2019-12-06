@@ -1,3 +1,10 @@
+/*
+ * ICS 45J - Fall 2019
+ * Lab 5 - Android Studio
+ * Group name: Jackfruit
+ * Members: Lillian Won, Linda Le, Jack Yang Huang
+ */
+
 package com.example.todolist;
 
 import androidx.annotation.NonNull;
@@ -21,10 +28,10 @@ import java.util.Random;
 
 public class NewItemActivity extends AppCompatActivity {
 
-    TextView title, addTitle, desc, date;
-    EditText title2, desc2, date2;
-    Button addNewTaskBtn, cancelBtn;
-    DatabaseReference ref;
+    private TextView title, addTitle, desc, date;
+    private EditText title2, desc2, date2;
+    private Button addNewTaskBtn, cancelBtn;
+    private DatabaseReference ref;
 
     Integer randNum = new Random().nextInt();
     String keyItem = Integer.toString((randNum));

@@ -1,3 +1,10 @@
+/*
+* ICS 45J - Fall 2019
+* Lab 5 - Android Studio
+* Group name: Jackfruit
+* Members: Lillian Won, Linda Le, Jack Yang Huang
+*/
+
 package com.example.todolist;
 
 import androidx.annotation.NonNull;
@@ -22,13 +29,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView titlePage, subtitlePage;
-    Button btnCreate, btnSearch;
+    private TextView titlePage, subtitlePage;
+    private Button btnCreate, btnSearch;
 
-    DatabaseReference reference;
-    RecyclerView myList;
-    ArrayList<MyItem> itemList;
-    ItemAdapter itemAdapter;
+    private DatabaseReference reference;
+    private RecyclerView myList;
+    private ArrayList<MyItem> itemList;
+    private ItemAdapter itemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

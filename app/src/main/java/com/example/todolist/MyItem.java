@@ -1,3 +1,10 @@
+/*
+ * ICS 45J - Fall 2019
+ * Lab 5 - Android Studio
+ * Group name: Jackfruit
+ * Members: Lillian Won, Linda Le, Jack Yang Huang
+ */
+
 package com.example.todolist;
 
 public class MyItem {

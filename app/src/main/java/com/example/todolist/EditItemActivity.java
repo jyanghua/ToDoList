@@ -1,3 +1,10 @@
+/*
+ * ICS 45J - Fall 2019
+ * Lab 5 - Android Studio
+ * Group name: Jackfruit
+ * Members: Lillian Won, Linda Le, Jack Yang Huang
+ */
+
 package com.example.todolist;
 
 import androidx.annotation.NonNull;
@@ -18,12 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 public class EditItemActivity extends AppCompatActivity {
 
-    EditText title, desc, date;
-    Button btnCancel, btnSave;
-    DatabaseReference ref;
+    private EditText title, desc, date;
+    private Button btnCancel, btnSave;
+    private DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
