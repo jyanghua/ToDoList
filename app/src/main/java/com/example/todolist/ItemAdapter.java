@@ -18,8 +18,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> {
@@ -27,6 +25,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     private Context context;
     private ArrayList<MyItem> myItem;
 
+    // Constructor of the class, assigns the context and list
     public ItemAdapter(Context c, ArrayList<MyItem> lst) {
         context = c;
         myItem = lst;
@@ -49,6 +48,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         final String getDate = myItem.get(position).getItemDate();
         final String getKey = myItem.get(position).getItemKey();
 
+        // Listener that triggers by clicking on the item and will allow the user to edit it
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -66,6 +66,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
         });
 
+        // Listener that triggers by holding the click on the item and will allow the user to delete it
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -83,6 +84,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         });
     }
 
+    /**
+     * This method gets the number of items.
+     * @return int This returns the number of items.
+     */
     @Override
     public int getItemCount() {
         return myItem.size();
@@ -90,7 +95,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemTitle, itemDescription, itemDate, itemKey;
+        private TextView itemTitle, itemDescription, itemDate, itemKey;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

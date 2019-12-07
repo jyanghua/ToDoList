@@ -48,7 +48,7 @@ public class EditItemActivity extends AppCompatActivity {
         date.setText((getIntent().getStringExtra("itemDate")));
         final String key = getIntent().getStringExtra("itemKey");
 
-        // used to edit/update the app
+        // Save button that will update the changes inputted by the user to the database
         btnSave.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -60,12 +60,13 @@ public class EditItemActivity extends AppCompatActivity {
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        // store data into the database..
+                        // Stores the data into the database
                         dataSnapshot.getRef().child("itemTitle").setValue(title.getText().toString());
                         dataSnapshot.getRef().child("itemDescription").setValue(desc.getText().toString());
                         dataSnapshot.getRef().child("itemDate").setValue(date.getText().toString());
                         dataSnapshot.getRef().child("itemKey").setValue(key);
 
+                        // Switches back to the main activity window
                         Intent intent = new Intent( EditItemActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
@@ -78,6 +79,7 @@ public class EditItemActivity extends AppCompatActivity {
             }
         });
 
+        // Listener for the cancel button. Finishes current activity
         btnCancel.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 finish();

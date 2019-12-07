@@ -49,17 +49,17 @@ public class DeleteItemActivity extends AppCompatActivity {
         date.setText((getIntent().getStringExtra("itemDate")));
         final String key = getIntent().getStringExtra("itemKey");
 
-        // cancel button
+        // Listener for the cancel button. Finishes current activity
         btnCancel.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
             }
         });
 
-        // delete the item
         ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
                 key);
 
+        // Deletes the current item from the database
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,8 +79,6 @@ public class DeleteItemActivity extends AppCompatActivity {
                 });
             }
         });
-
-
 
     }
 }

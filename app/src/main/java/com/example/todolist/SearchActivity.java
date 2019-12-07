@@ -53,6 +53,7 @@ public class SearchActivity extends AppCompatActivity {
         //Fetch data from Firebase
         reference = FirebaseDatabase.getInstance().getReference().child("ToDoList");
 
+        // Listener that will prompt the search for the items that contain the keywords/input
         btnSearchWords.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -64,7 +65,7 @@ public class SearchActivity extends AppCompatActivity {
     private void firebaseSearch(String keywords){
         Toast.makeText(SearchActivity.this, "Started search", Toast.LENGTH_SHORT).show();
 
-        //Database setup
+        // Lists that will save locally the information that is queried from the database
         mySearchResults = findViewById(R.id.mySearchResults);
         mySearchResults.setLayoutManager(new LinearLayoutManager(this));
         itemList = new ArrayList<MyItem>();
@@ -74,6 +75,7 @@ public class SearchActivity extends AppCompatActivity {
         Query firebaseQuery = reference.orderByChild("itemTitle").startAt(keywords).endAt(keywords + "\uf8ff");
         */
 
+        // Queries all the information and filters it out on the client. Case insensitive
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -86,6 +88,8 @@ public class SearchActivity extends AppCompatActivity {
                         itemList.add(i);
                     }
                 }
+
+                // Creates the new item adapter that will display the results of the search
                 itemAdapter = new ItemAdapter(SearchActivity.this, itemList);
                 mySearchResults.setAdapter(itemAdapter);
                 itemAdapter.notifyDataSetChanged();

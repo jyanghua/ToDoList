@@ -55,24 +55,25 @@ public class NewItemActivity extends AppCompatActivity {
         cancelBtn = findViewById(R.id.btnCancel);
 
 
-        // save task to Firebase
+        // Saves a task or item to the database
         addNewTaskBtn.setOnClickListener( new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               // put info to firebase
-               // creates a new directory in firebase database
+
+               // Creates a new directory in the Firebase database
                ref = FirebaseDatabase.getInstance().getReference().child("ToDoList").child("ToDo" +
                        randNum);
 
                ref.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                       // store data into the database..
+                       // Stores the data into the database
                        dataSnapshot.getRef().child("itemTitle").setValue(title2.getText().toString());
                        dataSnapshot.getRef().child("itemDescription").setValue(desc2.getText().toString());
                        dataSnapshot.getRef().child("itemDate").setValue(date2.getText().toString());
                        dataSnapshot.getRef().child("itemKey").setValue(keyItem);
 
+                       // Switches back to the main activity window
                        Intent intent = new Intent( NewItemActivity.this, MainActivity.class);
                        startActivity(intent);
                    }
@@ -86,8 +87,8 @@ public class NewItemActivity extends AppCompatActivity {
            }
         });
 
-        // cancel button
-       cancelBtn.setOnClickListener( new View.OnClickListener() {
+        // Listener for the cancel button. Finishes current activity
+        cancelBtn.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
             }

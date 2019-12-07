@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btnCreate = findViewById(R.id.btnCreate);
         btnSearch = findViewById(R.id.btnSearch);
 
+        // Listener that changes activity to allow the user to create a new item
         btnCreate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Listener that changes activity to allow the user search for items
         btnSearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -64,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Database setup
+        // Lists that will save locally the information that is queried from the database
         myList = findViewById(R.id.myList);
         myList.setLayoutManager(new LinearLayoutManager(this));
         itemList = new ArrayList<MyItem>();
 
-        //Fetch data from Firebase
+        // Fetch data from Firebase
         reference = FirebaseDatabase.getInstance().getReference().child("ToDoList");
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
