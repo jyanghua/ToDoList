@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ICS 45J, Fall 2019
+Lab 5, Android Studio
+Group name: JJJ
+Members: Lillian Won, Linda Le, Jack Yang Huang
+-->
+
 <resources>
     <color name="colorPrimary">#7B4AC4</color>
     <color name="colorPrimaryDark">#2B116B</color>
