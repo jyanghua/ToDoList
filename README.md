@@ -3,6 +3,7 @@
 **To-Do List** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing, deleting an existing item, and searching current items.
 
 Submitted by: **Jack Yang Huang**
+
 Collaborators: Lillian Won, Linda Le, Jack Yang Huang
 
 Time spent: **22** hours spent in total
@@ -29,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/7xapHX3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
